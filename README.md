@@ -1,7 +1,7 @@
 Definição do Projeto
 ==================
 
-# Nas palavras do professor:
+#### Nas palavras do professor:
 
 	Caros, este espaço é para vocês (até 3a. feira 19/08/14) colocarem um documento com a definição do projeto e do produto que vocês pretendem entregar no curso de PI-2. 
 

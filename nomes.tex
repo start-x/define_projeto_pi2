@@ -1,0 +1,211 @@
+%%------------------------------------------------------------------------------
+%%----------------Variaveis para o LaTeX no Relatório---------------------------
+\newcommand{\universidade}{Universidade de Bras\'ilia - Campus Gama}
+\newcommand{\hell}{-}		%nome do Projeto
+\newcommand{\autor}{\ziul}							%criador do pdf - só observado nos detalhes do pdf
+\newcommand{\assunto}{}			%Nome do experimento
+\newcommand{\ver}{Equipe: Start-X\assunto}						%numeração do experimento
+\newcommand{\professor}{Alessandro Borges de Sousa Oliveira, %
+Edson Mintsu Hung, %
+Ricardo Ajax Dias Kosloski, %
+Ricardo Matos Chaim, %
+Suélia de Siqueira Rodrigues Fleury Rosa e %
+Thais Maia Araujo.}
+\newcommand{\curso}{Projeto Integrador de Engenharia 2}
+\newcommand{\turma}{}
+
+%%------------------------------------------------------------------------------
+%%------------------------Detalhes para serem revistos--------------------------
+\newcommand{\keyw}{Projeto Integrador de Engenharia 2}	%Keywords
+\newcommand{\entrega}{\today}		%data de entrega do relatório
+
+
+%%------------------------------------------------------------------------------
+%%------------------------------Nomes-------------------------------------------
+\newcommand{\luiz}{\href{http://lattes.cnpq.br/1109478949026592}{Luiz Fernando Gomes de Oliveira}}	%Para link
+\newcommand{\ziul}{{Luiz Fernando Gomes de Oliveira}}					%Sem link
+\newcommand{\luizmatricula}{10/46969}
+\newcommand{\eluiz}{ziuloliveira@gmail.com}
+
+%----------------------Foto e bibliografia do(s) autor(es)----------------------
+%%------------------------------------------------------------------------------
+%					  Deve de ser COLADO ao final do texto
+%%------------------------------------------------------------------------------
+%	\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{./fts/luiz}}]{\luiz}\label{luiz}
+%	É, sou eu. Aparecendo aqui só de brinks. Meio que trollando um relatório.
+%	\end{IEEEbiography}
+%
+%	\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{ffuu}}]{Helbert Junior}\label{panda}
+%	Pow, eu tinha que aparecer também né?
+%	\end{IEEEbiography}
+%%------------------------------------------------------------------------------
+
+%%------------------------------------------------------------------------------
+%%-----------------------------Organização--------------------------------------
+\makeatletter
+\@ifclassloaded{scrartcl}% Slide
+{
+	\newcommand{\names}{\luiz}
+	\newcommand{\namecapa}{\ziul \\ \ziul}
+	%\newcommand{\allmatriculas}{\luizmatricula,\canelamatricula}
+}
+{
+	% \newcommand{\names}{\luiz~- \luizmatricula }
+	\newcommand{\names}{Camila Ferreira, %
+Charles Daniel, %
+Gabriela Navarro, %
+Jos\'e Alberto, %
+Jos\'e Alisson, %
+Julio Cezar do Nascimento, %
+Lucas Konashiro, %
+Luiz Fernando Gomes de Oliveira, %
+Macartur Sousa, %
+Priscila Pires, %
+Tatiana Dias e %
+Thiago Ferreira Gomes.}
+}
+\makeatother
+
+
+\newcommand{\cor}{vermelho}
+\newcommand{\comprimeto}{20m}
+\title{\ver}
+
+\makeatletter
+\@ifclassloaded{coursepaper}
+{
+	\author{\names}
+	\studentnumber{\luizmatricula} %Matricula
+	\instructor{\professor}
+	\coursenumber{\hell}
+	\college{\universidade}
+	\date{\entrega}
+
+	%% Redefinindo Titulo
+	\def\@maketitle{%
+	  %\newpage
+	  %\null
+	  \begin{center}
+	  \includegraphics[width=\textwidth]{./fga.jpg}%	
+	  \end{center}
+	  {\sffamily \Huge\curso\par}
+	  \begin{flushleft}%
+	  	\begin{spacing}{1}%
+	    {\sffamily \LARGE \@title \par}%
+	    % {\sffamily \@college\\}%
+	    \sffamily \textbf{Semestre:} $2^o/2014$ \\%\hspace{1cm} Turma: \turma\\
+	    % \vskip 1em%
+	    \sffamily \textbf{Professores:} \@instructor\\%
+	    {\sffamily \lineskip .75em \textbf{Grupo:} \names}\\%
+	    \sffamily\textbf{Data:}  \@date\\
+	    
+	    \par%
+	    \end{spacing}%
+	  \end{flushleft}\hrule\vskip 1em\par
+	  \par
+	  \vskip 1.5em}
+
+ 	\usepackage{fancyhdr}
+ 	\fancyhead{\ver}
+ 	\fancyfoot{ }
+ 	\fancyhead[LE,RO]{Página \thepage ~de \pageref{LastPage}}
+ 	\fancyhead[LO]{\hell}
+ 	\fancyhead[RE]{\slshape\leftmark}
+ 	\pagestyle{fancy}
+
+}
+% end coursepaper
+
+\@ifclassloaded{exam}
+{%
+	\printanswers %apresentar respostas
+	\renewcommand{\solutiontitle}{\noindent\textbf{Resposta:}\par\noindent}
+	\usepackage{setspace}
+
+	\pagestyle{head}
+	\firstpageheader{}{\includegraphics[width=\textwidth]{./fga.jpg}}{}
+	\runningheader{\hell}{Página \thepage\ de \numpages}{\entrega}
+	\runningheadrule
+
+	%% Redefinindo Titulo
+	\def\@maketitle{%
+	  \newpage
+	  \null
+	  \includegraphics[width=\textwidth]{./fga.jpg}%
+	  \vskip 2em%
+	  \begin{flushleft}%
+	  	\begin{spacing}{1}%
+	    {\sffamily \LARGE \@title \par}%
+	    \vskip 1em%
+	    {\sffamily \large\lineskip .75em\ziul ~-~ \luizmatricula}\\%
+	    %\vskip 1em%
+	    \sffamily \@date\\
+	    \vskip 1em%
+	    \sffamily \universidade\\%
+	    \sffamily \hell\hskip 6pt%
+				\\%
+	    \sffamily Professor: \professor%
+	    \par%
+	    \end{spacing}%
+	  \end{flushleft}\hrule\vskip 1em\par
+	  \par
+	  \vskip 1.5em}
+}
+%end exam
+{
+	% \usepackage{setspace}
+	\title{%\includegraphics[width=18cm]{./fts/cap.png}\\
+	\hell\\\ver}
+	\@ifclassloaded{IEEEtran}
+	{
+		%%------------------------------------------------------------------------------
+		%%	Resolveu o problema de a linguagem não estar declarada
+		\makeatletter
+		\def\markboth#1#2{\def\leftmark{\@IEEEcompsoconly{\sffamily}\MakeUppercase{\protect#1}}%
+		\def\rightmark{\@IEEEcompsoconly{\sffamily}\MakeUppercase{\protect#2}}}
+		\makeatother
+		\newcommand{\ieee}{true}
+		\newcommand{\review}{
+			\IEEEcompsoctitleabstractindextext{%
+			\begin{abstract}
+				\input{abstract}
+			\end{abstract}
+			%%-------------------------------------
+			\begin{IEEEkeywords} %palavras chaves
+				\centering\keyw %,\LaTeX.
+			\end{IEEEkeywords}}
+			
+			\thispagestyle{empty}
+			\IEEEdisplaynotcompsoctitleabstractindextext
+			\IEEEpeerreviewmaketitle
+		}
+		\author{
+			\ifthenelse{\equal{\journal}{true}}{
+				\names\\
+			}{
+			%\thanks{Revisado em \today.}
+			\IEEEauthorblockN{\luiz}
+			\IEEEauthorblockA{Matricula: \luizmatricula\\E-mail: \eluiz}
+%			\and
+%			\IEEEauthorblockN{\canela}
+%			\IEEEauthorblockA{Matricula: \canelamatricula\\E-mail: \ecanela}
+			}
+		}
+	}
+	{
+		\newcommand{\ieee}{false}
+		% \author{\names}
+		\newcommand{\review}{
+		\begin{abstract}
+				\input{abstract}
+		\end{abstract}
+		}
+		
+	}
+}
+\makeatother
+
+%%------------------------------------------------------------------------------
+% Cabeçalho das páginas, se tiver no modelo
+\markboth{Universidade de Bras\'ilia - Campus Gama - FGA, \entrega}
+{Shell \MakeLowercase{\textit{et al.}}: \ver}
